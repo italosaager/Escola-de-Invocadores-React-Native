@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './pages/Home';
 import Lanes from './pages/Lanes';
-import Search from './pages/Search';
+import Counters from './pages/Counters';
 import Tiergod from './pages/Tiergod';
 import Tutorials from './pages/Tutorials';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -33,8 +33,8 @@ export default function Routes() {
       tabBarIcon: () => (<Ionicons name='home-outline' color={'#fff'} size={22} />)
     }} />
 
-    <Tab.Screen name='Pesquisar' component={Search} options={{
-      tabBarIcon: () => (<Ionicons name='search' color={'#fff'} size={22} />)
+    <Tab.Screen name='Counters' component={Counters} options={{
+      tabBarIcon: () => (<Feather name='smile' color={'#fff'} size={22} />)
     }} />
 
     <Tab.Screen name='Tutoriais' component={Tutorials} options={{

@@ -1,38 +1,42 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, Linking } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function Home() {
+
+  const navigation = useNavigation();
+
  return (
   <ScrollView style={styles.container}>
 
-    <Text style={styles.title}> Patch atual: </Text>
     <Text style={styles.text}> Dicas separadas por rotas </Text>
 
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.container2}>
       
     <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/toplaner.png')} title='TOP LANER'/>
+      <Image style={styles.images} source={require('../assets/campeoes/darius.jpg')} />
       <Text style={styles.textimage}>TOP LANER</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/jungler.png')} title='TOP LANER'/>
+      <Image style={styles.images} source={require('../assets/campeoes/rammus.jpg')} />
       <Text style={styles.textimage}>JUNGLER</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/midlaner.png')} title='TOP LANER'/>
+      <Image style={styles.images} source={require('../assets/campeoes/ahri.png')}/>
       <Text style={styles.textimage}>MID LANER</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/adc.png')} title='TOP LANER'/>
+      <Image style={styles.images} source={require('../assets/campeoes/ashe.jpg')} />
       <Text style={styles.textimage}>AD CARRY</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/suporte.png')} title='TOP LANER'/>
+      <Image style={styles.images} source={require('../assets/campeoes/thresh.jpg')} />
       <Text style={styles.textimage}>SUPORTE</Text>
     </TouchableOpacity>
 
@@ -43,28 +47,38 @@ export default function Home() {
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.container2}>
       
     <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/arauto.jpg')} title='TOP LANER'/>
+      <Image style={styles.images} source={require('../assets/minions.png')}/>
+      <Text style={styles.textimage}>MINIONS</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity style={styles.touch}>
+      <Image style={styles.images} source={require('../assets/arauto.jpg')}/>
       <Text style={styles.textimage}>ARAUTO</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/baron.png')} title='TOP LANER'/>
+      <Image style={styles.images} source={require('../assets/baron.png')} />
       <Text style={styles.textimage}>BARON</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/torre.png')} title='TOP LANER'/>
+      <Image style={styles.images} source={require('../assets/torre.png')}/>
       <Text style={styles.textimage}>TORRES</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/itens.png')} title='TOP LANER'/>
+      <Image style={styles.images} source={require('../assets/itens.png')}/>
       <Text style={styles.textimage}>ITENS</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/classes.jpg')} title='TOP LANER'/>
+      <Image style={styles.images} source={require('../assets/classes.jpg')}/>
       <Text style={styles.textimage}>CLASSES</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity style={styles.touch} onPress={() => navigation.navigate('Counters')}>
+      <Image style={styles.images} source={require('../assets/counters.png')}/>
+      <Text style={styles.textimage}>COUNTERS</Text>
     </TouchableOpacity>
 
     </ScrollView>
@@ -73,8 +87,8 @@ export default function Home() {
 
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.container2}>
       
-    <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/hardbr.png')} title='TOP LANER'/>
+    <TouchableOpacity style={styles.touch} onPress={() => Linking.openURL('https://www.twitch.tv/1hardbr1')}>
+      <Image style={styles.images} source={require('../assets/hardbr.png')}/>
       <Text style={styles.textimage}>Hardbr</Text>
     </TouchableOpacity>
 
@@ -84,9 +98,20 @@ export default function Home() {
 
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.container2}>
       
-    <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/hardbryt.png')} title='TOP LANER'/>
+    <TouchableOpacity style={styles.touch} onPress={() => Linking.openURL('https://www.youtube.com/italosaager')}>
+      <Image style={styles.images} source={require('../assets/hardbryt.png')}/>
       <Text style={styles.textimage}>Hardbr</Text>
+    </TouchableOpacity>
+
+    </ScrollView>
+
+    <Text style={styles.text}> Localizações físicas </Text>
+
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.container2}>
+      
+    <TouchableOpacity style={styles.touch} onPress={() => Linking.openURL('geo:34.0324664,-118.4596429')}>
+      <Image style={styles.images} source={require('../assets/riotgames.jpg')}/>
+      <Text style={styles.textimage}>Riot Games</Text>
     </TouchableOpacity>
 
     </ScrollView>
