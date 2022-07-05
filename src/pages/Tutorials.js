@@ -1,22 +1,41 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function Tutorials() {
  return (
-   <View style={styles.container}>
-    <Text style={styles.text}> tutoriais </Text>
-   </View>
+  <ScrollView style={styles.container}>
+
+    <ScrollView>
+    <Text style={styles.title} >
+      Patch atual: 
+    </Text>
+    <TouchableOpacity>
+      
+    </TouchableOpacity>
+    </ScrollView>
+
+    <ScrollView>
+    <Text style={styles.title} >
+      Lanes
+    </Text>
+    </ScrollView>
+
+
+  </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container:{
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#000',
+    opacity: 0.9
   },
-  text:{
-    fontSize: 25,
+  title:{
+    fontSize: 22,
     fontWeight: 'bold',
+    color: '#fff',
+    margin: 20,
   }
 })

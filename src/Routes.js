@@ -6,7 +6,8 @@ import Lanes from './pages/Lanes';
 import Search from './pages/Search';
 import Tiergod from './pages/Tiergod';
 import Tutorials from './pages/Tutorials';
-import Ionicons from '@expo/vector-icons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Feather from 'react-native-vector-icons/Feather'
 
 const Tab = createBottomTabNavigator();
 
@@ -15,23 +16,38 @@ export default function Routes() {
   <NavigationContainer>
 
     <Tab.Navigator 
-    screenOptions={{ headerStyle: {backgroundColor: '#000'}, headerTintColor: '#fff'}}
+    screenOptions={{ 
+      headerStyle: {backgroundColor: '#000', opacity: 0.9}, 
+      headerTintColor: '#fff',
+      tabBarStyle: {backgroundColor: '#000', opacity: 0.9,},
+      tabBarActiveTintColor: '#fff',
+      tabBarInactiveTintColor: 'grey',
+      tabBarActiveBackgroundColor: 'royalblue',
+      tabBarLabelStyle: {fontSize: 14}
+    }}
 
-     tabBarOptions={{
-      activeTintColor: 'royalblue',
-      inactiveTintColor: 'grey',
-     }}
+    
   
     >
-    <Tab.Screen name='Início' component={Home} />
+    <Tab.Screen name='Início' component={Home} options={{
+      tabBarIcon: () => (<Ionicons name='home-outline' color={'#fff'} size={22} />)
+    }} />
 
-    <Tab.Screen name='Pesquisar' component={Search} />
+    <Tab.Screen name='Pesquisar' component={Search} options={{
+      tabBarIcon: () => (<Ionicons name='search' color={'#fff'} size={22} />)
+    }} />
 
-    <Tab.Screen name='Tutoriais' component={Tutorials} />
+    <Tab.Screen name='Tutoriais' component={Tutorials} options={{
+      tabBarIcon: () => (<Feather name='book' color={'#fff'} size={22} />)
+    }} />
 
-    <Tab.Screen name='Tier God' component={Tiergod} />
+    <Tab.Screen name='Tier God' component={Tiergod} options={{
+      tabBarIcon: () => (<Feather name='trending-up' color={'#fff'} size={22} />)
+    }} />
 
-    <Tab.Screen name='Lanes' component={Lanes} />
+    <Tab.Screen name='Lanes' component={Lanes} options={{
+      tabBarIcon: () => (<Feather name='box' color={'#fff'} size={22} />)
+    }} />
    </Tab.Navigator>
 
   </NavigationContainer>
