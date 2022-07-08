@@ -1,9 +1,8 @@
 import React from 'react';
-import { View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Tiergod from './pages/Tiergod';
-import Lanes from './pages/Lanes';
+import Pesquisar from './pages/Pesquisar';
 import Home from './pages/Home';
 import Tutorials from './pages/Tutorials';
 import Counters from './pages/Counters';
@@ -19,7 +18,7 @@ export default function Stacks() {
     <Stack.Screen name='counters' component={Counters} />
     <Stack.Screen name='tutorials' component={Tutorials} />
     <Stack.Screen name='tiergod' component={Tiergod} />
-    <Stack.Screen name='lanes' component={Lanes} />
+    <Stack.Screen name='pesquisar' component={Pesquisar} />
    </Stack.Navigator>
   </NavigationContainer>
 

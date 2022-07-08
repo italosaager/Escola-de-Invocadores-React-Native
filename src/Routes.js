@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './pages/Home';
-import Lanes from './pages/Lanes';
+import Pesquisar from './pages/Pesquisar';
 import Counters from './pages/Counters';
 import Tiergod from './pages/Tiergod';
 import Tutorials from './pages/Tutorials';
@@ -33,7 +33,7 @@ export default function Routes() {
       tabBarIcon: () => (<Ionicons name='home-outline' color={'#fff'} size={22} />)
     }} />
 
-    <Tab.Screen name='Counters' component={Counters} options={{
+    <Tab.Screen  name='Counters' component={Counters} options={{
       tabBarIcon: () => (<Feather name='smile' color={'#fff'} size={22} />)
     }} />
 
@@ -45,9 +45,10 @@ export default function Routes() {
       tabBarIcon: () => (<Feather name='trending-up' color={'#fff'} size={22} />)
     }} />
 
-    <Tab.Screen name='Lanes' component={Lanes} options={{
-      tabBarIcon: () => (<Feather name='box' color={'#fff'} size={22} />)
+    <Tab.Screen  name='Pesquisar' component={Pesquisar} options={{
+      tabBarIcon: () => (<Feather name='search' color={'#fff'} size={22} />), headerShown: false
     }} />
+
    </Tab.Navigator>
 
   </NavigationContainer>

@@ -47,37 +47,37 @@ export default function Home() {
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.container2}>
       
     <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/minions.png')}/>
+      <Image style={styles.images} source={require('../assets/images/minions.png')}/>
       <Text style={styles.textimage}>MINIONS</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/arauto.jpg')}/>
+      <Image style={styles.images} source={require('../assets/images/arauto.jpg')}/>
       <Text style={styles.textimage}>ARAUTO</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/baron.png')} />
+      <Image style={styles.images} source={require('../assets/images/baron.png')} />
       <Text style={styles.textimage}>BARON</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/torre.png')}/>
+      <Image style={styles.images} source={require('../assets/images/torre.png')}/>
       <Text style={styles.textimage}>TORRES</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/itens.png')}/>
+      <Image style={styles.images} source={require('../assets/images/itens.png')}/>
       <Text style={styles.textimage}>ITENS</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.touch}>
-      <Image style={styles.images} source={require('../assets/classes.jpg')}/>
+      <Image style={styles.images} source={require('../assets/images/classes.jpg')}/>
       <Text style={styles.textimage}>CLASSES</Text>
     </TouchableOpacity>
 
     <TouchableOpacity style={styles.touch} onPress={() => navigation.navigate('Counters')}>
-      <Image style={styles.images} source={require('../assets/counters.png')}/>
+      <Image style={styles.images} source={require('../assets/images/counters.png')}/>
       <Text style={styles.textimage}>COUNTERS</Text>
     </TouchableOpacity>
 
@@ -88,7 +88,7 @@ export default function Home() {
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.container2}>
       
     <TouchableOpacity style={styles.touch} onPress={() => Linking.openURL('https://www.twitch.tv/1hardbr1')}>
-      <Image style={styles.images} source={require('../assets/hardbr.png')}/>
+      <Image style={styles.images} source={require('../assets/images/hardbr.png')}/>
       <Text style={styles.textimage}>Hardbr</Text>
     </TouchableOpacity>
 
@@ -99,7 +99,7 @@ export default function Home() {
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.container2}>
       
     <TouchableOpacity style={styles.touch} onPress={() => Linking.openURL('https://www.youtube.com/italosaager')}>
-      <Image style={styles.images} source={require('../assets/hardbryt.png')}/>
+      <Image style={styles.images} source={require('../assets/images/hardbryt.png')}/>
       <Text style={styles.textimage}>Hardbr</Text>
     </TouchableOpacity>
 
@@ -110,7 +110,7 @@ export default function Home() {
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.container2}>
       
     <TouchableOpacity style={styles.touch} onPress={() => Linking.openURL('geo:34.0324664,-118.4596429')}>
-      <Image style={styles.images} source={require('../assets/riotgames.jpg')}/>
+      <Image style={styles.images} source={require('../assets/images/riotgames.jpg')}/>
       <Text style={styles.textimage}>Riot Games</Text>
     </TouchableOpacity>
 
