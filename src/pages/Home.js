@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, Linking } from 'react-native';
+import { Text, StyleSheet, Image, TouchableOpacity, Linking } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
@@ -76,7 +76,7 @@ export default function Home() {
       <Text style={styles.textimage}>CLASSES</Text>
     </TouchableOpacity>
 
-    <TouchableOpacity style={styles.touch} onPress={() => navigation.navigate('Counters')}>
+    <TouchableOpacity style={styles.touch} onPress={() => navigation.navigate('counters')}>
       <Image style={styles.images} source={require('../assets/images/counters.png')}/>
       <Text style={styles.textimage}>COUNTERS</Text>
     </TouchableOpacity>

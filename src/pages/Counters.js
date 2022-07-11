@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity, } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import champList from '../Lists/champList';
 
@@ -16,12 +15,11 @@ export default function Campeoes () {
     <FlatList 
     numColumns={5}
     data={champList}
-  
     renderItem={({item}) => {
         return (
           
         <View style={styles.container2} >
-          <TouchableOpacity style={{alignItems: 'center'}}>
+          <TouchableOpacity onPress={() => navigation.navigate('champdetails', {champ: item})} style={{alignItems: 'center'}}>
           <Image style={styles.photos} source={item.image} />
             <Text style={styles.text}>
                 {item.name}

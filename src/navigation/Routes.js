@@ -1,15 +1,17 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import Home from './pages/Home';
-import Pesquisar from './pages/Pesquisar';
-import Counters from './pages/Counters';
-import Tiergod from './pages/Tiergod';
-import Tutorials from './pages/Tutorials';
+import Home from '../pages/Home';
+import Search from '../pages/Search';
+import Tiergod from '../pages/Tiergod';
+import Tutorials from '../pages/Tutorials';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather'
+import CounterStack from './CounterStack';
+
 
 const Tab = createBottomTabNavigator();
+
 
 export default function Routes() {
  return (
@@ -26,32 +28,32 @@ export default function Routes() {
       tabBarLabelStyle: {fontSize: 14}
     }}
 
-    
-  
     >
-    <Tab.Screen name='Início' component={Home} options={{
-      tabBarIcon: () => (<Ionicons name='home-outline' color={'#fff'} size={22} />)
+    <Tab.Screen name='Home' component={Home} options={{
+      tabBarIcon: () => (<Ionicons name='home-outline' color={'#fff'} size={22} />), 
     }} />
 
-    <Tab.Screen  name='Counters' component={Counters} options={{
-      tabBarIcon: () => (<Feather name='smile' color={'#fff'} size={22} />)
+    <Tab.Screen  name='Counters' component={CounterStack} options={{ headerShown: false, 
+      tabBarIcon: () => (<Feather name='smile' color={'#fff'} size={22} />), 
     }} />
 
-    <Tab.Screen name='Tutoriais' component={Tutorials} options={{
-      tabBarIcon: () => (<Feather name='book' color={'#fff'} size={22} />)
+    <Tab.Screen name='Tutorials' component={Tutorials} options={{
+      tabBarIcon: () => (<Feather name='book' color={'#fff'} size={22} />), 
     }} />
 
     <Tab.Screen name='Tier God' component={Tiergod} options={{
-      tabBarIcon: () => (<Feather name='trending-up' color={'#fff'} size={22} />)
+      tabBarIcon: () => (<Feather name='trending-up' color={'#fff'} size={22} />), 
     }} />
 
-    <Tab.Screen  name='Pesquisar' component={Pesquisar} options={{
+    <Tab.Screen  name='Search' component={Search} options={{
       tabBarIcon: () => (<Feather name='search' color={'#fff'} size={22} />), headerShown: false
     }} />
 
    </Tab.Navigator>
-
+  
   </NavigationContainer>
+  
+  
 
   );
 }
