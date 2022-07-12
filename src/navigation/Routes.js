@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import Home from '../pages/Home';
+import HomeStack from '../navigation/HomeStack';
 import Search from '../pages/Search';
 import Tiergod from '../pages/Tiergod';
 import Tutorials from '../pages/Tutorials';
@@ -29,8 +29,8 @@ export default function Routes() {
     }}
 
     >
-    <Tab.Screen name='Home' component={Home} options={{
-      tabBarIcon: () => (<Ionicons name='home-outline' color={'#fff'} size={22} />), 
+    <Tab.Screen name='Home' component={HomeStack} options={{
+      tabBarIcon: () => (<Ionicons name='home-outline' color={'#fff'} size={22} />), headerShown: false 
     }} />
 
     <Tab.Screen  name='Counters' component={CounterStack} options={{ headerShown: false, 

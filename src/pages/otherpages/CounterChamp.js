@@ -1,11 +1,17 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet, Image} from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
+import champList from '../../Lists/champList';
 
 export default function CounterChamp({route}) {
   const champ = route.params.champ;
+  const navigation = useNavigation();
+  <champList/>
+  
  return (
-   <ScrollView style={styles.container}>
-
+   <View style={styles.container}>
+    
     <View style={styles.view}>
       <Image style={styles.image}  source={champ.image}/>
 
@@ -15,10 +21,10 @@ export default function CounterChamp({route}) {
       <Text style={styles.bordao}>{champ.bordao} </Text>
 
       <View style={styles.details} >
-
         <View style={styles.rotas}>
         <Text style={styles.textdetails}>{champ.rotas}</Text>
         </View>
+        
         <View style={styles.dano}>
           <Text style={styles.textdetails}>{champ.dano}</Text>
           </View>
@@ -31,19 +37,46 @@ export default function CounterChamp({route}) {
     </View>
 
     <View style={styles.container2}>
-      <View>
-      <Text style={styles.countertext}>{champ.name} é fraco contra</Text>
-
+      <View style={{flexDirection: 'row', justifyContent: 'space-between',marginRight:20, marginTop:5, marginLeft:20}}>
+        <Text style={styles.textcounter}>{champ.name} é fraco contra</Text>
+        <Text style={styles.textcounter}>{champ.name} é forte contra</Text>
       </View>
 
-      <View>
-      <Text style={styles.countertext}>{champ.name} é fraco contra</Text>
-      
+      <View style={{flexDirection: 'row', maxHeight: '90%', marginLeft:20, marginRight:20,}}>
+      <FlatList 
+      data={champList}
+      renderItem={({item})=> {
+        return(
+        <View style={{marginTop: 10,}}  >
+          <TouchableOpacity onPress={() => navigation.navigate('Detalhes', {champ: item})} style={styles.button}>
+            <Image style={styles.counterimage} source={item.image}/>
+            <Text style={styles.textdetails}>{item.name}</Text>
+          </TouchableOpacity>
+        </View>
+        )
+      }}
+      keyExtractor={(elemento) => String(elemento.key)}
+      />
+      <View style={{}}>
+      <FlatList 
+      data={champList}
+      renderItem={({item})=> {
+        return(
+        <View style={{marginTop: 10,}}>
+          <TouchableOpacity onPress={() => navigation.navigate('Detalhes', {champ: item})} style={styles.button}>
+            <Image style={styles.counterimage} source={item.image}/>
+            <Text style={styles.textdetails}>{item.name}</Text>
+          </TouchableOpacity>
+        </View>
+        )
+      }}
+      keyExtractor={(elemento) => String(elemento.key)}
+      />
       </View>
-    
+      </View>
     </View>
 
-   </ScrollView>
+   </View>
   );
 }
 
@@ -56,8 +89,8 @@ const styles = StyleSheet.create({
   view:{
     margin: 20,
     flexDirection: 'row',
-    backgroundColor: '#191970',
-    borderRadius: 44/2
+    backgroundColor: '#483d8b',
+    borderRadius: 44/2,
   },
   image:{
     width: 100,
@@ -84,6 +117,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     padding: 4,
   },
+  textcounter:{
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
   dano:{
     backgroundColor: 'chocolate',
   },
@@ -94,14 +132,25 @@ const styles = StyleSheet.create({
     backgroundColor: 'green',
   },
   container2: {
-    flexDirection: 'row', 
     justifyContent: 'space-between',
-    marginTop: 20, marginBottom: 20, 
-    marginLeft: 40, 
-    marginRight: 40,
+    margin: 20,
+    backgroundColor: '#483d8b',
+    padding: 10,
+    borderRadius: 44/2,
+    flex: 1,
   },
   countertext:{
     color: '#fff',
     fontWeight: 'bold',
+    fontSize: 16
+  },
+  counterimage:{
+    width: 55,
+    height: 55,
+  },
+  flat:{
+  },
+  button:{
+    flexDirection: 'row',
   }
 })

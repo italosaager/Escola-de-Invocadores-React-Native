@@ -76,7 +76,7 @@ export default function Home() {
       <Text style={styles.textimage}>CLASSES</Text>
     </TouchableOpacity>
 
-    <TouchableOpacity style={styles.touch} onPress={() => navigation.navigate('counters')}>
+    <TouchableOpacity style={styles.touch} onPress={() => navigation.navigate('Counters')}>
       <Image style={styles.images} source={require('../assets/images/counters.png')}/>
       <Text style={styles.textimage}>COUNTERS</Text>
     </TouchableOpacity>
@@ -109,7 +109,7 @@ export default function Home() {
 
     <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.container2}>
       
-    <TouchableOpacity style={styles.touch} onPress={() => Linking.openURL('geo:34.0324664,-118.4596429')}>
+    <TouchableOpacity style={styles.touch} onPress={() => Linking.openURL('geo:34.0324664,-118.4596429,17z')}>
       <Image style={styles.images} source={require('../assets/images/riotgames.jpg')}/>
       <Text style={styles.textimage}>Riot Games</Text>
     </TouchableOpacity>

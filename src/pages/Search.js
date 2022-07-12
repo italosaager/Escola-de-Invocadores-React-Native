@@ -16,7 +16,7 @@ export default function Search() {
   }, [])
 
   const fetchPosts = () => {
-    const apiURL = 'https://jsonplaceholder.typicode.com/posts';
+    const apiURL = require('../Lists/champListjson.json');
     fetch(apiURL).then((response) => response.json()).then((responseJson) => {
       setfilterData(responseJson);
       setmasterData(responseJson);
@@ -43,7 +43,7 @@ export default function Search() {
   const ItemView = ({item}) =>{
     return (
       <Text style={styles.itemStyle}>
-        {item.key}{'. '}{item.name}
+        {item.id}{'. '}{item.name}
       </Text>
     )
   }

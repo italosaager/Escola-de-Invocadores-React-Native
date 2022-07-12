@@ -16,10 +16,9 @@ export default function Campeoes () {
     numColumns={5}
     data={champList}
     renderItem={({item}) => {
-        return (
-          
+        return (        
         <View style={styles.container2} >
-          <TouchableOpacity onPress={() => navigation.navigate('champdetails', {champ: item})} style={{alignItems: 'center'}}>
+          <TouchableOpacity onPress={() => navigation.navigate('Detalhes', {champ: item})} style={{alignItems: 'center', marginTop: 20,}}>
           <Image style={styles.photos} source={item.image} />
             <Text style={styles.text}>
                 {item.name}
@@ -37,6 +36,7 @@ const styles = StyleSheet.create({
     container:{
     flex:1,
     backgroundColor: '#000',
+    opacity: 0.9,
     },
     photos:{
       width: 70,
