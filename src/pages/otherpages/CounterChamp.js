@@ -6,15 +6,37 @@ import champList from '../../Lists/champList';
 
 export default function CounterChamp({route}) {
   const champ = route.params.champ;
+  const champions = champList;
+
+  const fracoContraKeys = champ.fracocontra.map((item) => {
+    return item;
+  });
+  const forteContraKeys = champ.fortecontra.map((item) => {
+    return item;
+  })
+  let fracoContra = [];
+  let forteContra = [];
+  
+  for (const champion of champions){
+      for (const forte of forteContraKeys){
+        if( forte == champion.key)
+          forteContra.push(champion)
+      }
+      for(const fraco of fracoContraKeys) {
+        if(champion.key == fraco){
+          fracoContra.push(champion);
+        }
+      }
+  };
+
   const navigation = useNavigation();
   <champList/>
-  
+
  return (
    <View style={styles.container}>
     
     <View style={styles.view}>
       <Image style={styles.image}  source={champ.image}/>
-
       <View>
 
       <Text style={styles.text}>{champ.name} </Text>
@@ -44,7 +66,7 @@ export default function CounterChamp({route}) {
 
       <View style={{flexDirection: 'row', maxHeight: '90%', marginLeft:20, marginRight:20,}}>
       <FlatList 
-      data={champList}
+      data={fracoContra}
       renderItem={({item})=> {
         return(
         <View style={{marginTop: 10,}}  >
@@ -59,7 +81,7 @@ export default function CounterChamp({route}) {
       />
       <View style={{}}>
       <FlatList 
-      data={champList}
+      data={forteContra}
       renderItem={({item})=> {
         return(
         <View style={{marginTop: 10,}}>

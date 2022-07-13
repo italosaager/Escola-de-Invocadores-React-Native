@@ -71,7 +71,7 @@ export default function Home() {
       <Text style={styles.textimage}>ITENS</Text>
     </TouchableOpacity>
 
-    <TouchableOpacity style={styles.touch}>
+    <TouchableOpacity style={styles.touch} onPress={() => navigation.navigate}>
       <Image style={styles.images} source={require('../assets/images/classes.jpg')}/>
       <Text style={styles.textimage}>CLASSES</Text>
     </TouchableOpacity>
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
   container:{
     flex: 1,
     backgroundColor: '#000',
-    opacity: 0.9
+    opacity: 0.9,
   },
   title:{
     fontSize: 22,

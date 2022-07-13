@@ -18,7 +18,7 @@ export default function CounterStack() {
     tabBarLabelStyle: {fontSize: 14}
   }}
    >
-    <Stack.Screen name='Counters' component={Counters}  />
+    <Stack.Screen name='Counters ' component={Counters}  />
     <Stack.Screen name='Detalhes' component={CounterChamp}  />
    </Stack.Navigator>
   );
