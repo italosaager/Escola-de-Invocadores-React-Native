@@ -79,6 +79,7 @@ export default function CounterChamp({route}) {
       }}
       keyExtractor={(elemento) => String(elemento.key)}
       />
+      
       <View style={{}}>
       <FlatList 
       data={forteContra}
