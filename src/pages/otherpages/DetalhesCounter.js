@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
-import champList from '../../Lists/champList';
+import champList from '../../lists/champList';
 
-export default function CounterChamp({route}) {
+export default function DetalhesCounter({route}) {
   const champ = route.params.champ;
   const champions = champList;
 
@@ -65,7 +65,8 @@ export default function CounterChamp({route}) {
       </View>
 
       <View style={{flexDirection: 'row', maxHeight: '90%', marginLeft:20, marginRight:20,}}>
-      <FlatList 
+      <FlatList
+      showsVerticalScrollIndicator={false}
       data={fracoContra}
       renderItem={({item})=> {
         return(
@@ -82,6 +83,7 @@ export default function CounterChamp({route}) {
       
       <View style={{}}>
       <FlatList 
+      showsVerticalScrollIndicator={false}
       data={forteContra}
       renderItem={({item})=> {
         return(
@@ -156,7 +158,9 @@ const styles = StyleSheet.create({
   },
   container2: {
     justifyContent: 'space-between',
-    margin: 20,
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 20,
     backgroundColor: '#483d8b',
     padding: 10,
     borderRadius: 44/2,

@@ -1,18 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
 
-export default function Classes() {
+export default function Cg() {
 
  return (
   <View style={styles.container}>
    <ScrollView>
    
-    <View style={styles.container2}>
-    <Image style={styles.mainImage} source={require('../../assets/images/campeoeslol.png')}/>
-    </View>
-
     <View style={styles.container3}>
-      <Text style={styles.text}></Text>
+      <Text style={styles.text}>teste</Text>
     </View>
 
    </ScrollView>

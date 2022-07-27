@@ -925,7 +925,7 @@ const champList=[{
 {
     key: '0160',
     name: 'Nilah',
-    image: require('../assets/campeoes/nidalee.jpg'),
+    image: require('../assets/campeoes/nilah.jpg'),
     bordao: 'a Alegria Irrestrita',
     rotas: 'Bot',
     dano: 'Físico',

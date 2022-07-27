@@ -1,18 +1,22 @@
 import React from 'react';
 import { View, Text, FlatList, Image, StyleSheet, TouchableOpacity, } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import champList from '../Lists/champList';
+import champList from '../lists/champList';
+import Search from '../components/Search';
 
 export default function Campeoes () {
 
   const navigation = useNavigation();
 
   <champList/>
-
+  
     return (
+      
    <View style={styles.container}>
-
+    <Search/>
     <FlatList 
+    showsVerticalScrollIndicator={false}
+    style={{marginBottom: 10,}}
     numColumns={5}
     data={champList}
     renderItem={({item}) => {

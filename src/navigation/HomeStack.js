@@ -1,7 +1,9 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../pages/Home';
-import Classes from '../pages/otherpages/Classes';
+import Lanes from '../pages/otherpages/Lanes';
+import Counters from '../pages/Counters';
+import Cg from '../pages/otherpages/Cg';
 
 const Stack = createStackNavigator();
 
@@ -18,8 +20,10 @@ export default function CounterStack() {
     tabBarLabelStyle: {fontSize: 14}
   }}
    >
-    <Stack.Screen name='Home ' component={Home}  />
-    <Stack.Screen name='Classes' component={Classes}  />
+    <Stack.Screen name='Home' component={Home} options={{headerShown: false}} />
+    <Stack.Screen name='Counters' component={Counters}  />
+    <Stack.Screen name='Lanes' component={Lanes} />
+    <Stack.Screen name='Cg' component={Cg} />
    </Stack.Navigator>
   );
 }
