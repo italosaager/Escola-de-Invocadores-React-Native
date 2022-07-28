@@ -1,41 +1,70 @@
 import React from 'react';
-import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Image } from 'react-native';
 
-export default function Cg() {
-
+export default function Cg({route}) {
+    const cg = route.params.cg;
+    
  return (
-  <View style={styles.container}>
-   <ScrollView>
-   
-    <View style={styles.container3}>
-      <Text style={styles.text}>teste</Text>
+    
+   <ScrollView style={styles.container}>
+    <View style={styles.image}>
+        <Image style={styles.image} source={cg.image}/>
+    </View>
+
+    <View style={styles.dicas}>
+        <Text style={styles.text}>
+            Informações:
+        </Text>
+        <Text style={styles.text2}>
+        {cg.description}
+        </Text>
     </View>
 
    </ScrollView>
-  </View>
-
   );
 }
 
 const styles = StyleSheet.create({
-  container:{
-    backgroundColor: '#000',
-    opacity: 0.9,
-    flex: 1,
-  },
-  text:{
-    color: '#fff',
-    fontSize: 16,
-  },
-  mainImage:{
-    width: 420,
-    height: 200,
-  },
-  container2:{
-    justifyContent: 'center', 
-    alignItems: 'center',
-  },
-  container3:{
-    margin: 20,
-  }
+    container:{
+        flex: 1,
+        backgroundColor: '#000',
+        opacity: 0.9,
+    },
+    image:{
+        width: '100%',
+        height: 200,
+    },
+    lanetitle:{
+        fontSize: 22,
+        color: '#fff',
+        fontWeight: 'bold',
+    },
+    rota:{
+        flex: 1,
+        backgroundColor: '#483d8b',
+        margin: 20,
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderRadius: 5,
+    },
+    text:{
+        fontSize: 22,
+        color: '#fff',
+        fontWeight: 'bold',
+        borderRadius: 5,
+        marginBottom: 20,
+        textAlign: 'center',
+    },
+    text2:{
+        fontSize: 18,
+        color: '#fff',
+        fontWeight: '500',
+        borderRadius: 5,
+        marginBottom: 20,
+        textAlign: 'center',
+    },
+    dicas:{
+        backgroundColor: '#483d8b',
+        margin: 20,
+    }
 })

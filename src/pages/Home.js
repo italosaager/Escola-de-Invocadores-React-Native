@@ -56,7 +56,7 @@ export default function Home() {
       renderItem={({item}) => {
         return (        
           <View style={styles.touch} >
-            <TouchableOpacity onPress={() => navigation.navigate('Cg', {cg: item})} style={{alignItems: 'center', marginTop: 20,}}>
+            <TouchableOpacity onPress={() => navigation.navigate('Conhecimentos gerais', {cg: item})} style={{alignItems: 'center', marginTop: 20,}}>
             <Image style={styles.images} source={item.image} />
               <Text style={styles.textimage}>
                   {item.name}

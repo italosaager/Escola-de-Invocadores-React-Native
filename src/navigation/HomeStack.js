@@ -23,7 +23,7 @@ export default function CounterStack() {
     <Stack.Screen name='Home' component={Home} options={{headerShown: false}} />
     <Stack.Screen name='Counters' component={Counters}  />
     <Stack.Screen name='Lanes' component={Lanes} />
-    <Stack.Screen name='Cg' component={Cg} />
+    <Stack.Screen name='Conhecimentos gerais' component={Cg} />
    </Stack.Navigator>
   );
 }

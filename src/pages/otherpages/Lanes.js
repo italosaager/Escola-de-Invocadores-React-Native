@@ -22,7 +22,9 @@ export default function Lanes({route}) {
         <Text style={styles.text}>
             Resumo:
         </Text>
-        <Text style={styles.text2}>{lanes.inicio}</Text>
+        <Text style={styles.text2}>
+            {lanes.inicio}
+        </Text>
     </View>
 
     <View style={styles.dicas}>

@@ -33,10 +33,6 @@ export default function Routes() {
     <Tab.Screen  name='counters' component={CounterStack} options={{ headerShown: false, 
       tabBarIcon: () => (<Feather name='smile' color={'#fff'} size={22} />), 
     }} />
-
-    <Tab.Screen  name='itens' component={Itens} options={{ headerShown: false, 
-      tabBarIcon: () => (<Feather name='box' color={'#fff'} size={22} />), 
-    }} />
     
    </Tab.Navigator>
   
