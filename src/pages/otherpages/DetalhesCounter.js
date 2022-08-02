@@ -42,6 +42,7 @@ export default function DetalhesCounter({route}) {
       <Text style={styles.text}>{champ.name} </Text>
       <Text style={styles.bordao}>{champ.bordao} </Text>
 
+
       <View style={styles.details} >
         <View style={styles.rotas}>
         <Text style={styles.textdetails}>{champ.rotas}</Text>
@@ -59,7 +60,7 @@ export default function DetalhesCounter({route}) {
     </View>
 
     <View style={styles.container2}>
-      <View style={{flexDirection: 'row', justifyContent: 'space-between',marginRight:20, marginTop:5, marginLeft:20}}>
+      <View style={{flexDirection: 'row', justifyContent: 'space-between',marginRight:20, marginTop:5, marginLeft:20,}}>
         <Text style={styles.textcounter}>{champ.name} é fraco contra</Text>
         <Text style={styles.textcounter}>{champ.name} é forte contra</Text>
       </View>
@@ -116,6 +117,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#483d8b',
     borderRadius: 44/2,
+    
   },
   image:{
     width: 100,
@@ -130,6 +132,9 @@ const styles = StyleSheet.create({
   },
   details:{
     flexDirection: 'row',
+    alignContent: 'center',
+    flexWrap: 'wrap',
+    maxWidth: 270,
   },
   bordao:{
     color: '#fff',
@@ -151,7 +156,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'chocolate',
   },
   funcao:{
-    backgroundColor: 'purple'
+    backgroundColor: 'purple',
   },
   rotas:{
     backgroundColor: 'green',
